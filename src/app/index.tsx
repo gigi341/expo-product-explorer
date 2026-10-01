@@ -32,6 +32,10 @@ export default function HomeScreen() {
   return (
     <ThemedView style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
+
+        <ThemedText>Areej Hamid</ThemedText>
+        <ThemedText>Roll No: 23i-3041</ThemedText>
+
         <ThemedView style={styles.heroSection}>
           <AnimatedIcon />
           <ThemedText type="title" style={styles.title}>
@@ -56,6 +60,7 @@ export default function HomeScreen() {
         </ThemedView>
 
         {Platform.OS === 'web' && <WebBadge />}
+
       </SafeAreaView>
     </ThemedView>
   );
