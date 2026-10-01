@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { AnimatedIcon } from '@/components/animated-icon';
 import { HintRow } from '@/components/hint-row';
+import { ProductList } from '@/components/product-list';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { WebBadge } from '@/components/web-badge';
@@ -32,6 +33,13 @@ export default function HomeScreen() {
   return (
     <ThemedView style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
+        <ThemedView type="backgroundElement" style={styles.identityCard}>
+          <ThemedText type="smallBold">Areej Hamid</ThemedText>
+          <ThemedText type="small" themeColor="textSecondary">
+            Roll No: 23i-3041
+          </ThemedText>
+        </ThemedView>
+
         <ThemedView style={styles.heroSection}>
           <AnimatedIcon />
           <ThemedText type="title" style={styles.title}>
@@ -55,7 +63,10 @@ export default function HomeScreen() {
           />
         </ThemedView>
 
+        <ProductList />
+
         {Platform.OS === 'web' && <WebBadge />}
+
       </SafeAreaView>
     </ThemedView>
   );
@@ -74,6 +85,14 @@ const styles = StyleSheet.create({
     gap: Spacing.three,
     paddingBottom: BottomTabInset + Spacing.three,
     maxWidth: MaxContentWidth,
+  },
+  identityCard: {
+    alignItems: 'center',
+    gap: Spacing.half,
+    marginTop: Spacing.three,
+    paddingHorizontal: Spacing.four,
+    paddingVertical: Spacing.two,
+    borderRadius: Spacing.three,
   },
   heroSection: {
     alignItems: 'center',
